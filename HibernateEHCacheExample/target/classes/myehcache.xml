@@ -2,18 +2,22 @@
 <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
 	monitoring="autodetect" dynamicConfig="true">
-
+	<!-- By default, Ehcache stored the cached files in temp folder. -->
 	<diskStore path="java.io.tmpdir/ehcache" />
+	<!-- Ask Ehcache to store cache in this path -->
+	<!-- diskStore path="d:\\cache" /> -->
 
+	<!-- For more info about attributes of ehcache.xml file please refer the link https://javabeat.net/ehcache/ -->
 	<defaultCache maxEntriesLocalHeap="10000" eternal="false"
-		timeToIdleSeconds="120" timeToLiveSeconds="120" diskSpoolBufferSizeMB="30"
-		maxEntriesLocalDisk="10000000" diskExpiryThreadIntervalSeconds="120"
-		memoryStoreEvictionPolicy="LRU" statistics="true">
+		timeToIdleSeconds="120" timeToLiveSeconds="120"
+		diskSpoolBufferSizeMB="30" maxEntriesLocalDisk="10000000"
+		diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU"
+		statistics="true">
 		<persistence strategy="localTempSwap" />
 	</defaultCache>
 
-	<cache name="employee" maxEntriesLocalHeap="10000" eternal="false"
-		timeToIdleSeconds="5" timeToLiveSeconds="10">
+	<cache name="employee" maxEntriesLocalHeap="10000"
+		eternal="false" timeToIdleSeconds="5" timeToLiveSeconds="10">
 		<persistence strategy="localTempSwap" />
 	</cache>
 

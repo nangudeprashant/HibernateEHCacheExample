@@ -19,13 +19,13 @@ public class Employee {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "emp_id")
+	@Column(name = "empid")
 	private long id;
 
-	@Column(name = "emp_name")
+	@Column(name = "ename")
 	private String name;
 
-	@Column(name = "emp_salary")
+	@Column(name = "salary")
 	private double salary;
 
 	@OneToOne(mappedBy = "employee")

@@ -21,7 +21,7 @@
 		<property name="hibernate.cache.use_query_cache">true</property>
 		<property name="net.sf.ehcache.configurationResourceName">/myehcache.xml</property>
 
-		<mapping class="com.javaLive.model.Employee" />
 		<mapping class="com.javaLive.model.Address" />
+		<mapping class="com.javaLive.model.Employee" />
 	</session-factory>
 </hibernate-configuration>

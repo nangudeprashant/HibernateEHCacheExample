@@ -1,5 +1,6 @@
 package com.javaLive.service;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -49,6 +50,8 @@ public class HibernateEHCacheMain {
 		transaction.commit();
 		otherTransaction.commit();
 		sessionFactory.close();
+		
+		HibernateUtil.shutdown();
 	}
 
 	private static void printStats(Statistics stats, int i) {
@@ -69,5 +72,5 @@ public class HibernateEHCacheMain {
 		System.out.println(count+":: Name="+emp.getName()+", Zipcode="+emp.getAddress().getZipcode());
 		printStats(stats, count);
 	}
-
+    
 }
